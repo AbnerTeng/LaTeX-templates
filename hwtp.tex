@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+\usepackage{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-2.5pt}
+\pagestyle{fancy}
+
+\newcommand{\cont}{\subseteq}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage[mathscr]{euscript}
+\let\euscr\mathscr \let\mathscr\relax% just so we can load this and rsfs
+\usepackage[scr]{rsfso}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue,
+citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\lstset{
+			backgroundcolor=\color{red!50!green!50!blue!50!white!20},
+			breaklines = true,
+			tabsize=2,
+			commentstyle=\color{codegreen},
+			keywordstyle=\color{magenta},
+			numberstyle=\tiny\color{codegray},
+			stringstyle=\color{codepurple},
+	    }
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\dfdx}{\frac{df}{dx}}
+\newcommand{\ddxp}[1]{\frac{d}{dx}\left( #1 \right)}
+\newcommand{\dydx}{\frac{dy}{dx}}
+\let\ds\displaystyle
+\newcommand{\intx}[1]{\int #1 \, dx}
+\newcommand{\intt}[1]{\int #1 \, dt}
+\newcommand{\defint}[3]{\int_{#1}^{#2} #3 \, dx}
+\newcommand{\imp}{\Rightarrow}
+\newcommand{\un}{\cup}
+\newcommand{\inter}{\cap}
+\newcommand{\ps}{\mathscr{P}}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newtheorem*{sol}{Solution}
+\newtheorem*{claim}{Claim}
+\newtheorem{problem}{Problem}
+\pgfplotsset{compat=1.17}
+\begin{document}
+ 
+% Don't change the above session
+
+\lhead{Class/HW Name}
+\chead{Your Name}
+\rhead{\today}
+ 
+% \maketitle
+\section*{case 1}
+    descreption and $math$ between words. \\
+    and :\\
+       $$ 
+        Equations\ with\ whole\ line 
+       $$
+    \\
+    Align environment
+    \begin{align*}
+    Math\ Equations
+    \end{align*}
+
+    Code section
+    \begin{lstlisting}
+        type code inside
+    \end{lstlisting}
+
+    two images section
+    %\begin{figure}[H] %% H for float
+    %   \centering
+    %  \begin{minipage}[t]{0.48\textwidth}
+        %  \includegraphics[width = 6cm]{}
+    %     \caption{figure 1.}
+        %\end{minipage}
+        %\begin{minipage}[t]{0.48\textwidth}
+        %   \includegraphics[width = 6cm]{}
+        %  \caption{figure 2.}
+    %\end{figure}
+
+
+    \section*{case 2}
+    \begin{problem} 
+        Descriptions
+    \end{problem}
+
+    \begin{proof}
+        Proofs
+    \end{proof}
+
+    \begin{problem} 
+        Descriptions
+    \end{problem}
+    \begin{proof} 
+        Proofs
+    \end{proof}
+
+    one image section
+    %\begin{figure}[H]
+    %  \centering
+    %   \includegraphics[width = 0.6\textwidth]{}
+    %\end{figure}
+
+    % Don't change the below session
+    
+\end{document}
