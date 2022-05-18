@@ -1,0 +1,183 @@
+\documentclass[12pt]{article}
+\usepackage{geometry} 
+\geometry{head = 2cm, bottom = 1cm, left = 2cm, right = 2cm}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-2.5pt}
+\pagestyle{fancy}
+
+\newcommand{\cont}{\subseteq}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage[mathscr]{euscript}
+\let\euscr\mathscr\let\mathscr\relax% just so we can load this and rsfs
+\usepackage[scr]{rsfso}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue,
+citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\lstset{
+			backgroundcolor=\color{white},
+            frame = single,
+            basicstyle=\footnotesize\ttfamily,
+            columns=fullflexible,
+			breaklines = true,
+			tabsize=4,
+            numbers=left,
+			commentstyle=\color{codegreen},
+            otherkeywords = {0,1,2,3,4,5,6,7,8,9},
+            deletekeywords={<-},
+            keywordstyle=\color{blue},
+			numberstyle=\tiny\color{black},
+			stringstyle=\color{codepurple},
+	    }
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\dfdx}{\frac{df}{dx}}
+\newcommand{\ddxp}[1]{\frac{d}{dx}\left(#1 \right)}
+\newcommand{\dydx}{\frac{dy}{dx}}
+\newcommand{\intx}[1]{\int#1 \, dx}
+\newcommand{\intt}[1]{\int#1 \, dt}
+\newcommand{\defint}[3]{\int_{#1}^{#2} #3 \, dx}
+\newcommand{\imp}{\Rightarrow}
+\newcommand{\un}{\cup}
+\newcommand{\inter}{\cap}
+\newcommand{\ps}{\mathscr{P}}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newtheorem*{sol}{Solution}
+\newtheorem*{claim}{Claim}
+\newtheorem{problem}{Problem}
+\pgfplotsset{compat=1.17}
+\begin{document}
+ 
+% Don't change the above session
+
+\lhead{Econometric}
+\chead{Computer Homework 1}
+\rhead{\today}
+
+% \maketitle
+\begin{large}
+    \hspace*{-5.8mm}Group 9
+    \end{large}\\\\
+    \hspace*{4mm} 107205008 \emph{Yu-Chen, Den}\\
+    \hspace*{4mm} 108208014 \emph{Fu-Chien, Hsiao}\\
+    \hspace*{4mm} 109102057 \emph{Liang-Yu, Hsu}
+
+\section*{Ch11-C4}
+\subsubsection*{Find the first difference model}
+\begin{lstlisting}[language = R]
+install.package("wooldridge")
+library(wooldridge)
+data("phillips")
+head(phillips)
+tail(phillips)
+fdm <- lm(data = phillips, cnif ~ cunem)
+summary(fdm)
+\end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \includegraphics*[width = 0.6\textwidth]{fdm.png}
+    \caption{summary of fdm}
+\end{figure}
+\number1. $\beta_1$ = -0.83281 and the P-value is 0.00583 $<$ 0.01\\
+\number2. The fdm model fits better, because the $\hat R^2$ is bigger.
+\newpage
+
+\section*{Ch11-C8}
+\subsubsection*{Estimate the AR (1) model and predict $unem$ of 2004}
+\begin{lstlisting}[language = R]
+AR1= arima(phillips$unem,order=c(1,0,0))
+AR1
+5.5631+0.7493*phillips$unem[length(phillips$unem)]
+plot.ts(phillips$unem)
+\end{lstlisting}
+The predict value of $unem$ = 10.0589, and the true $unem$ = 5.5
+
+\subsubsection*{Add a lag of inflation to the AR (1) model}
+\begin{lstlisting}[language = R]
+AR2= arima(phillips$unem,order=c(1,0,0), xreg=phillips$inf_1)
+AR2
+(1-pnorm(abs(AR2$coef)/sqrt(diag(AR2$var.coef))))*2
+\end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \includegraphics*[width = 0.7\textwidth]{AR2.png}
+    \caption{summary of AR1}
+\end{figure}
+the t-ratio of $inf_{t-1}$
+\[\frac{0.1277}{0.0581} = 2.1979 > t_{0.025}(30)\simeq 1.96\]
+We can say that $inf_{t-1}$ is significant.\\
+
+\subsubsection*{Predict the $unem$ of 2004}
+\begin{lstlisting}[language = R]
+(5.1810+0.7090*phillips$unem[length(phillips$unem)]+
+    0.1277*phillips$inf_1[length(phillips$inf_1)])
+\end{lstlisting}
+The predict value of $unem$ in 2004 = 9.63932
+\newpage
+
+\section*{Ch12-C10}
+\subsubsection*{Estimate the static Phillips curve equation}
+\begin{lstlisting}[language = R]
+library(wooldridge)
+str(phillips)
+ph1 <- phillips
+model1 <- lm(data = ph1, inf~unem)
+summary(model1)
+\end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \includegraphics*[width = 0.6\textwidth]{M1.png}
+    \caption{summary of model1}
+\end{figure}
+    
+\subsubsection*{See if serial correlation exists}
+\begin{lstlisting}[language = R]
+u_round<- round(residuals(model1),digits = 2)
+c1 <- c(0,u_round)
+c2 <- c(u_round,0)
+m1 <- matrix(0, nrow = 57, ncol = 2)
+m1[,1] <- c1
+m1[,2] <- c2
+colnames(m1) <- c("ut_1","ut")
+data1 <- data.frame(m1)
+data_c <- data1[-c(1,57),]
+model2 <- lm(ut ~ ut_1, data = data_c)
+summary(model2)
+\end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \includegraphics*[width = 0.6\textwidth]{M2.png}
+    \caption{summary of model2}
+\end{figure}
+The coefficient of $u_{t-1}$ = 0.5723, and the t-ratio = 5.281, so there's strong evidence of serial correlation.
+\newline
+
+\subsubsection*{Find out if there is much difference when the later years are added}
+\begin{lstlisting}[language = R]
+install.packages("prais")
+library(prais)
+p1 <- prais_winsten(inf ~ unem, data = ph1, index = "year")
+summary(p1)
+\end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \includegraphics*[width = 0.5\textwidth]{M3.png}
+    \caption{summary of static Phillips curve model by iterative Prais-Winsten}
+\end{figure}
+New coefficient of $unem$ is -0.714, and it has only small difference between the origin -0.716
+\end{document}
