@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{head=10mm,foot=10mm,left=20mm,right=20mm}
+
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-2.5pt}
+\pagestyle{fancy}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\lstset{
+			backgroundcolor=\color{red!50!green!50!blue!50!white!20},
+			breaklines = true,
+			tabsize=2,
+			commentstyle=\color{codegreen},
+			keywordstyle=\color{magenta},
+			numberstyle=\tiny\color{codegray},
+			stringstyle=\color{codepurple},
+	    }
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue,
+citecolor=blue, urlcolor=blue]{hyperref}
+
+\begin{document}
+
+\chead{Statistic Cheat Sheet}
+\section*{CH4. Multi-Variable Distribution}
+\subsection*{Conditional pdf}
+Given $X, Y$'s joint pdf is $f_{XY}(xy)$
+\begin{equation}
+    f(x|y)=\frac{f(x,y)}{f(y)}
+\end{equation}
+\begin{equation}
+    f(y|x)=\frac{f(x,y)}{f(x)}
+\end{equation}
+Use $f(y|x)$ as examples:
+\begin{enumerate}
+    \item for $x$, we don't need to concern the function relationship between $x$ and $y$
+    \item for $y$, we need to concern the function relationship between $x$ and $y$
+\end{enumerate}
+If the condition is a point:
+\begin{equation}
+    P(X<a|Y=y)=\int_{-\infty}^a f(x|y)dx=\int_{-\infty}^a \frac{f(x,y)}{f(y)}dx
+\end{equation}
+If the condition is a range:
+\begin{equation}
+    P(X<a|Y<b)=\frac{P(X<a \cap Y<b)}{P(Y<b)}
+\end{equation}
+\subsection*{Moments}
+Given $X$ and $Y$ are bivariate random variables, their joint pdf is $f(x,y)$, then the expected value of $g(x,y)$ is:
+\newline
+\begin{equation}
+    E[g(X,Y)]=\int_y\int_x g(x,y)f(x,y)dxdy = \int_x\int_y g(x,y)f(x,y)dydx
+\end{equation}
+\newline
+\newline
+Covariance and correlation coefficient
+\newline
+\begin{equation}
+    \sigma_{XY}=Cov(X,Y)=E\{[X-E(X)][Y-E(Y)]\}=E(XY)-E(X)E(Y)
+\end{equation}
+\begin{equation}
+    \rho_{XY}=Corr(X,Y)=\frac{Cov(X,Y)}{\sqrt{Var(X)}\sqrt{Var(Y)}}=\frac{\sigma_{XY}}{\sigma_X \sigma_Y}
+\end{equation}
+\newpage
+Properties:
+\begin{enumerate}
+    \item $E(aX+bY)=E(aX)+E(bY)=aE(x)+bE(y)$
+    \item $Cov(X,X)=Var(X)$
+    \item $Cov(X,c)=0$
+    \item $Var(aX+bY)=a^2Var(X)+b^2Var(Y)+2abCov(X,Y)$
+    \item $Cov(aX+b,cY+d)=acCov(X,Y)$
+    \item $Corr(aX+b,cY+d)=\frac{ac}{|ac|}Corr(X,Y)=sign(ac)Corr(X,Y)$
+\end{enumerate}
+Given $X_1,X_2,\cdots, X_n$, then:
+\begin{equation}
+    E(\sum_{i=1}^n X_i)=\sum_{i=1}^n E(X_i)
+\end{equation}
+\begin{equation}
+    Var(\sum_{i=1}^n X_i)=\sum_{i=1}^n Var(X_i)+\sum_{i=1}^n\sum_{j\neq i}Cov(X_i,X_j)
+\end{equation}
+\begin{equation}
+    E(\sum_{i=1}^n a_i X_i)=\sum_{i=1}^n a_i E(X_i)
+\end{equation}
+\begin{equation}
+    Var(\sum_{i=1}^n a_i X_i)=\sum_{i=1}^n a_i^2 Var(X_i)+\sum_{i=1}^n \sum_{j \neq i}a_i a_j Cov(X_i, X_j)
+\end{equation}
+\end{document}
