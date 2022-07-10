@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.3)  6 JUL 2022 18:52
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.3)  10 JUL 2022 17:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/abnerteng/GitHub/LaTeX-templates/statistic_cheatsheet_4
-(/Users/abnerteng/GitHub/LaTeX-templates/statistic_cheatsheet_4.tex
+**/Users/abnerteng/GitHub/LaTeX-templates/statcheatsheet/ch4/statistic_cheatsheet_4
+(/Users/abnerteng/GitHub/LaTeX-templates/statcheatsheet/ch4/statistic_cheatsheet_4.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -483,29 +483,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--69
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--69
-
- []
-
 [1
 
-] [2] (./statistic_cheatsheet_4.aux)
+]
+Underfull \hbox (badness 10000) in paragraph at lines 64--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--69
+
+ []
+
+[2] [3] [4] [5] [6] (./statistic_cheatsheet_4.aux)
 Package rerunfilecheck Info: File `statistic_cheatsheet_4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12572 strings out of 476179
- 199020 string characters out of 5809545
- 537696 words of memory out of 5000000
- 33154 multiletter control sequences out of 15000+600000
- 474312 words of font info for 53 fonts, out of 8000000 for 9000
+ 12574 strings out of 476179
+ 199125 string characters out of 5809545
+ 534701 words of memory out of 5000000
+ 33155 multiletter control sequences out of 15000+600000
+ 474320 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 108i,11n,106p,319b,329s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,12n,106p,359b,408s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on statistic_cheatsheet_4.pdf (2 pages).
+Output written on statistic_cheatsheet_4.pdf (6 pages).
