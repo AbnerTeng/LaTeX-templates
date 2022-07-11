@@ -155,4 +155,37 @@ Given $Y=y$, $X$'s conditional variance is
 \begin{equation}
     E[h(X)g(Y)|X]=h(X)E[g(Y)|X]
 \end{equation}
+\textbf{Simple law of iterated expectations, LIE}
+\begin{equation}
+    E[E(Y|X)]=E(Y)
+\end{equation}
+<proof>
+    \[E(Y|X=x)=\int_y yf(y|x)dy\]
+According to useful rule:
+    \[E[h(X)]=\int_x h(x)f(x)dx\]
+\begin{equation*}
+    \begin{aligned}
+        E[E(Y|X)] &=\int_x E(Y|X=x)f(x)dx = \int_x \int_y yf(y|x)dyf(x)dx \\
+        &= \int_x\int_y y\frac{f(x,y)}{f(x)}dyf(x)dx = \int_x \int_y yf(x,y)dydx \\
+        &= \int_y y\Big(\int_x f(x,y)dx\Big)dy = \int_y yf(y)dy = E(Y)
+    \end{aligned}
+\end{equation*}
+\textbf{Generalized LIE}
+\begin{equation}
+    E[g(Y)]=E\{E[g(Y)|X]\}
+\end{equation}
+\subsection*{jacobian's transformation method}
+\begin{description}
+    \item[Step 1.] From $w,z$ get $x,y$
+    \item[Step 2.] 
+        jacobian term:
+        \begin{equation*}
+            \begin{Vmatrix}
+                \frac{\partial h_1(w,z)}{\partial w} & \frac{\partial h_1(w,z)}{\partial z} \\
+                \frac{\partial h_2(w,z)}{\partial w} & \frac{\partial h_2(w,z)}{\partial z}
+            \end{Vmatrix}
+        \end{equation*}
+    \item[Step 3.] Key point: find the range of $w$ and $z$
+    \item[Step 4.] Bring in: $f_{WZ}(w,z) = f_{XY}[x = h_1(w,z), y = h_2(w,z)]\times |J|$   
+\end{description}
 \end{document}

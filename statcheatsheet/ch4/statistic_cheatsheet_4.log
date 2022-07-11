@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.3)  10 JUL 2022 17:53
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.3)  11 JUL 2022 11:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -495,7 +495,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--69
 
  []
 
-[2] [3] [4] [5] [6] (./statistic_cheatsheet_4.aux)
+[2] [3] [4] [5] [6] [7] (./statistic_cheatsheet_4.aux)
 Package rerunfilecheck Info: File `statistic_cheatsheet_4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
@@ -508,4 +508,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  108i,12n,106p,359b,408s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on statistic_cheatsheet_4.pdf (6 pages).
+Output written on statistic_cheatsheet_4.pdf (7 pages).
