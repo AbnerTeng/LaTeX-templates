@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+
+%%%% Include Packages
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+ \usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{tabularx}
+\hypersetup{colorlinks=true,urlcolor=black}
+\usepackage[11pt]{moresize}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage[inline]{enumitem}
+\usepackage{ragged2e}
+\usepackage{anyfontsize}
+
+%%%% Set Margins
+\usepackage[margin=1cm]{geometry}
+
+%%%% Set Fonts
+\setmainfont[
+BoldFont=SourceSansPro-Semibold.otf,
+ItalicFont=SourceSansPro-RegularIt.otf
+]{SourceSansPro-Regular.otf}
+
+%%%% Set Page Style
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%%% Set URL Style
+\urlstyle{same}
+
+%%%% Set Indentation
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%%%% Set Secondary Color, Page Number Color, Footer Text
+\definecolor{UI_blue}{RGB}{32, 64, 151}
+\definecolor{HF_color}{RGB}{179, 179, 179}
+\rfoot{{\color{HF_color} \thepage \ of \ 1, Updated \today}}
+
+%%%% Set Heading Format
+\titleformat{\section}{
+\color{UI_blue} \scshape \raggedright \large 
+}{}{0em}{}[\vspace{-0.7cm} \hrulefill \vspace{-0.2cm}]
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  END OF "DO NOT TOUCH" REGION
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%% --------------------------------------------------------------------------------------
+
+
+
+\begin{document}
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  HEADER
+%%%%%%% --------------------------------------------------------------------------------------
+\begin{center}
+    \begin{minipage}[b]{0.5\textwidth}
+            \centering
+            {\Huge Abner Teng} \\ %
+            \vspace{0.1cm}
+            {\color{UI_blue} \Large{Business Intelligence Intern}} \\
+    \end{minipage}%  
+\vspace{-0.15cm} 
+{\color{UI_blue} \hrulefill}
+\end{center}
+
+\justify
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{12pt}
+\vspace{0.2cm}
+\begin{center}
+    {\color{UI_blue} \Large{COVER LETTER}}
+\end{center}
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  First 2 Lines
+%%%%%%% --------------------------------------------------------------------------------------
+
+Date: \today \par \vspace{-0.1cm}
+Dear Woo Network, \\
+I am excited to be applying for the Business Intelligence Intern. I am confident that I have personalities and skills
+that you're looking for in a candidate.\\
+\newline
+During my undergraduate life, I was majored in Public Finance, but I've learned alot in various fields such as: CSR, FinTech, Marketing, Algorithm Trading, Data Science, etc\dots. Those made me not afraid of 
+trying new things and making mistakes. 
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  SIGNATURE
+%%%%%%% --------------------------------------------------------------------------------------
+
+\vspace{0.5cm}
+\raggedright
+Yours Faithfully \\ Abner Teng \\ 
+
+\end{document}
