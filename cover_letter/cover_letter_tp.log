@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.3)  9 AUG 2022 01:24
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.3)  13 SEP 2022 00:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -529,11 +529,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--100
-
- []
-
-
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 4.35004pt, for example:
 (fancyhdr)                \setlength{\footskip}{4.35004pt}.
@@ -547,7 +542,7 @@ Package rerunfilecheck Info: File `cover_letter_tp.out' has not changed.
 Here is how much of TeX's memory you used:
  13283 strings out of 476179
  261773 string characters out of 5809545
- 621506 words of memory out of 5000000
+ 618506 words of memory out of 5000000
  33880 multiletter control sequences out of 15000+600000
  469699 words of font info for 39 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
