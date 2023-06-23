@@ -49,5 +49,4 @@ Input preambles:
   ```
 - `\dydx` for $\dfrac{dy}{dx}$
 - `\imp` for $\Rightarrow$
-- `\intx` for $\int  \, dx$
-- `\set` for $\left\{ \right\}$
+- `\intx` for $\int  \ dx$
