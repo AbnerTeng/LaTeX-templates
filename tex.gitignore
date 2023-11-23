@@ -1,4 +1,5 @@
 # LaTeX temporary files
+.DS_Store
 *.aux
 *.log
 *.toc
