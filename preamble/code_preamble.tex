@@ -28,16 +28,20 @@
 \newcommand\pythonstyle
 {\lstset
     {
+        frame=tb,
         language=Python,
-        backgroundcolor=\color{backcolour},
+        aboveskip=5mm,
+        belowskip=5mm,
+        % backgroundcolor=\color{backcolour},
         morekeywords={self},
-        keywordstyle=\ttfamily\color{deepblue},
+        keywordstyle=\bfseries\color{deepblue},
+        identifierstyle=\color{blue},
         emph={class,__init__,def},
         emphstyle=\ttfamily\color{deepred},
         stringstyle=\color{deepgreen},
-        commentstyle=\color{codegreen},
-        basicstyle=\ttfamily\footnotesize,
-        breakatwhitespace=false,
+        commentstyle=\itshape\color{codegreen},
+        basicstyle=\ttfamily,
+        breakatwhitespace=true,
         breaklines=true,
         keepspaces=true,
         numbers=none,
@@ -72,26 +76,9 @@
 }
 
 \lstnewenvironment{python}[1][]
-    {\lstset
     {
-        language=Python,
-        backgroundcolor=\color{backcolour},
-        morekeywords={self},
-        keywordstyle=\ttfamily\color{deepblue},
-        emph={class,__init__,def},
-        emphstyle=\ttfamily\color{deepred},
-        stringstyle=\color{deepgreen},
-        commentstyle=\color{codegreen},
-        basicstyle=\ttfamily\footnotesize,
-        breakatwhitespace=false,
-        breaklines=true,
-        keepspaces=true,
-        numbers=none,
-        showspaces=false,
-        showstringspaces=false,
-        showtabs=false,
-        tabsize=4,
-    }
+    \pythonstyle
+    \lstset{#1}
     }
 {}
 

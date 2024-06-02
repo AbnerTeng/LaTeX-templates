@@ -5,14 +5,26 @@ echo "#       LaTeX Template Generator Script        #"
 echo "#         Author: Yu-Chen(Abner), Den          #"
 echo "################################################"
 
-read -p "Enter the folder name for the new LaTeX file: " file_path
+read -p "Enter the folder name for the new LaTeX file: " folder_name
 
 echo "Selected file path: $file_path"
 
+mkdir -p "$file_path"
+
+preamble_path="${file_path}/preamble"
+mkdir -p "$preamble_path"
+
+echo "Preamble folder created: $preamble_path"
+
+echo "Adding preamble files..."
+
+cp "preamble/code_preamble.tex" "$preamble_path"
+cp "preamble/general_preamble.tex" "$preamble_path"
+
+echo "Preamble files copied to: $preamble_path"
+
 read -p "Enter the name for the new LaTeX file: " file_name
 tex_file="$file_path/$file_name.tex"
-
-mkdir -p "$file_path"
 
 echo "start writing template contents..."
 
