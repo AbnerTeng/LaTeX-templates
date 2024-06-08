@@ -29,6 +29,14 @@ Input preambles:
 - **preamble/general_preamble.tex**
   - General settings like math, figure, table, geometry, TikZ, etc...
 
+## Beamer
+
+Beamer is a $\LaTeX$ document class for creating slides for presentations.
+
+To use the Beamer template, you can simply copy the `beamer/beamer.tex` file to your project directory. Also, the pre-defined preamble `beamer_preamble.tex` is included in the `preamble` directory.
+
+> Note that this template is specially designed for students in National Chengchi University (NCCU).
+
 ## Useful Pre-defined commands
 
 - Python code block:

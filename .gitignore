@@ -5,3 +5,13 @@
 *.toc
 *.out
 *.synctex.gz
+
+# Beamer temporary files
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb
+*.xdv
