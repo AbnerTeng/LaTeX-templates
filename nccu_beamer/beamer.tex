@@ -1,0 +1,112 @@
+\documentclass[10pt, mathserif, hyperref={hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue},xcolor={dvipsnames}]{beamer}
+\input{../preamble/beamer_preamble_nccu.tex}
+\addtobeamertemplate{frametitle}{}{%
+    \begin{textblock*}{100mm}(.93\textwidth,-0.8cm)
+    \includegraphics[height=0.65cm,width=0.65cm]{../assets/nccuv2.png}
+    \end{textblock*}
+}
+
+\title[{\color{white} Short title}]{\textit{Your thesis title \\ \large{Master's Degree Exam}}}
+\author[Your name]{{\itshape Your name}  \\ \textit{Supervisor: } \\
+\vspace{0.5cm}
+\textit{Committee members: }}
+\date[\today]
+	{\small{\today \\ time, place}}
+
+\begin{document}
+\begin{frame}[fragile]
+    \titlepage
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Background}
+    \cite{lecun2015deep}
+\end{frame}
+
+\begin{frame}{Motivation}
+
+\end{frame}
+
+\begin{frame}{Motivation (Cont'd)}
+
+\end{frame}
+
+\begin{frame}{Main Results (I)}
+
+\end{frame}
+
+\begin{frame}{Main Results (II)}
+
+\end{frame}
+
+\begin{frame}{Main Result (III)}
+    
+\end{frame}
+
+\begin{frame}{Related Literature \& Contributions}
+
+\end{frame}
+
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{Data \& Methodology}
+
+{   
+    \begin{frame}{Outline}
+    \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\begin{frame}{Data}
+
+\end{frame}
+
+\begin{frame}{Methodology}
+
+\end{frame}
+
+\section{Empirical Results}
+
+{   
+    \begin{frame}{Outline}
+    \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\begin{frame}[fragile]{Empirical Results}
+    test
+\end{frame}
+
+\section{Conclusion}
+
+{
+    \begin{frame}{Outline}
+    \tableofcontents[currentsection]
+    \end{frame}}
+
+\begin{frame}{Conclusion}
+    test
+\end{frame}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{References}
+    \bibliography{citation.bib}
+\end{frame}
+
+\section{Appendix}
+
+{
+    \begin{frame}{Outline}
+    \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\begin{frame}{Appendix A}
+    test
+\end{frame}
+
+\end{document}
