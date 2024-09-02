@@ -5,7 +5,7 @@ echo "#       LaTeX Template Generator Script        #"
 echo "#         Author: Yu-Chen(Abner), Den          #"
 echo "################################################"
 
-read -p "Enter the folder name for the new LaTeX file: " folder_name
+read -p "Enter the file path for the new LaTeX file: " file_path
 
 echo "Selected file path: $file_path"
 
