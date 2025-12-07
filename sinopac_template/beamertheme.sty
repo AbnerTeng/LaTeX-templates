@@ -1,0 +1,127 @@
+% beamertheme.sty
+
+% custombeamertheme.sty
+\ProvidesPackage{beamertheme}
+
+% Required packages
+\RequirePackage[absolute,overlay]{textpos}
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[ruled,vlined]{algorithm2e}
+\RequirePackage{tikz}
+\RequirePackage{natbib}
+\RequirePackage{lmodern}
+\RequirePackage{emoji}
+\RequirePackage{threeparttable}
+\RequirePackage{makecell}
+\RequirePackage{arcs}
+\RequirePackage{colordvi}
+\RequirePackage{setspace}
+\RequirePackage{graphicx}
+\RequirePackage{subcaption}
+\RequirePackage[framemethod=TikZ]{mdframed}
+\RequirePackage{bm}
+\RequirePackage[USenglish]{babel}
+\RequirePackage{parskip}
+\RequirePackage{float}
+\RequirePackage{tabularx}
+\RequirePackage{booktabs}
+\RequirePackage{colortbl}
+\RequirePackage{multirow}
+\RequirePackage{caption}
+\RequirePackage{ragged2e}
+\RequirePackage{multicol}
+
+% Beamer theme
+\usetheme{Madrid}
+\usetikzlibrary{positioning,shapes,calc}
+
+% Colors
+% \definecolor{theme_color}{RGB}{46,8,84}
+\definecolor{theme_color}{RGB}{0,4,53}
+\definecolor{soft_purple}{RGB}{110,70,150}
+\definecolor{indianred}{RGB}{198,28,28}
+
+% Beamer color and font settings
+\bibliographystyle{apalike}
+\setbeamercolor{structure}{bg=white, fg=theme_color}
+\setbeamercolor{footnote mark}{fg=theme_color}
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{frametitle}{
+	\vspace{1ex}
+	\insertframetitle
+	\par\vspace{0.5ex}
+}
+\setbeamertemplate{itemize item}{\textcolor{theme_color}{\small$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\textcolor{theme_color}{\tiny$\triangleright$}}
+\setbeamertemplate{itemize subsubitem}{\textcolor{theme_color}{\scriptsize$\triangleright$}}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamercolor{frametitle}{fg=theme_color, bg=white}
+\setbeamertemplate{caption}[numbered]
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+% Fix \raggedright breaking inside minipages
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
+
+% Color commands
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+% Custom title page command
+% input order: paper title, authors, institute, conference, logo icon
+\newcommand{\newtitlepage}[5]{%
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture, overlay]
+			\path[inner color=white, outer color=white]
+			(current page.south west) rectangle (current page.north east);
+		\end{tikzpicture}
+
+		\begin{textblock*}{3cm}(11.5cm,0cm)
+			\includegraphics[width=4cm]{#5}
+		\end{textblock*}
+
+		\begin{textblock*}{\paperwidth}(0cm,2.5cm)
+			\centering
+			{\usebeamerfont{title}
+					\color{theme_color}
+					\LARGE #1}
+		\end{textblock*}
+
+		\begin{tikzpicture}[remember picture, overlay]
+			\fill[white] (current page.south west) rectangle ([yshift=1.6cm]current page.south east);
+		\end{tikzpicture}
+
+		\begin{textblock*}{\paperwidth}(0cm,5cm)
+			\centering
+			{\color{black} \small #2}
+		\end{textblock*}
+
+		\begin{textblock*}{\paperwidth}(0cm,6cm)
+			\centering
+			\vspace{0.5cm}
+			{\color{black} \small #3}
+		\end{textblock*}
+
+		\begin{textblock*}{\paperwidth}(0cm,7cm)
+			\centering
+			{\color{black} \normalsize #4}
+		\end{textblock*}
+
+	\end{frame}
+}
+
+% Circular image with label
+\newcommand{\personcircle}[3]{%
+	\begin{minipage}[t]{0.16\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\clip (0,0) circle(1.0cm);
+			\node at (0,0) {\includegraphics[width=2cm]{#1}};
+		\end{tikzpicture} \\[0.3em]
+		\small\textbf{#2} \\[0.1em]
+		\scriptsize #3
+	\end{minipage}%
+}
+

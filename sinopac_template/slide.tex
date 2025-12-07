@@ -1,0 +1,56 @@
+\documentclass[10pt, mathserif, hyperref={hidelinks,colorlinks=true,linkcolor=theme_color,citecolor=blue},xcolor={dvipsnames},aspectratio=169]{beamer}
+\usepackage{beamertheme}
+
+\begin{document}
+
+\newtitlepage{
+	\textbf{Big Title} \\[0.4em] Small title
+}{Authors list 1, \\[0.3em] Authors list 2}{Affiliations}{conference}{assets/sinopac-logo.png}
+\begin{frame}{Table of Contents}
+	\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+	\tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{frame title}
+\end{frame}
+
+\section{Methodology}
+
+\begin{frame}
+	\tableofcontents[currentsection]
+\end{frame}
+
+\section{Experiments}
+
+\begin{frame}
+	\tableofcontents[currentsection]
+\end{frame}
+
+\section{Discussions}
+
+\begin{frame}
+	\tableofcontents[currentsection]
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}
+	\tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}[t,allowframebreaks]
+	\frametitle{References}
+	\bibliography{citation}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Appendix}
+	Appendix
+\end{frame}
+
+\end{document}
